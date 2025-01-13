@@ -16,6 +16,8 @@
 		FF6B23412D3508F60054D2B7 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23402D3508F60054D2B7 /* WeatherAppUITests.swift */; };
 		FF6B23432D3508F60054D2B7 /* WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23422D3508F60054D2B7 /* WeatherAppUITestsLaunchTests.swift */; };
 		FF6B23542D351E240054D2B7 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23532D351E240054D2B7 /* NavigationViewModel.swift */; };
+		FF6B23562D3531ED0054D2B7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23552D3531ED0054D2B7 /* HomeView.swift */; };
+		FF6B23582D354A440054D2B7 /* WeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23572D354A440054D2B7 /* WeatherItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		FF6B23402D3508F60054D2B7 /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		FF6B23422D3508F60054D2B7 /* WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FF6B23532D351E240054D2B7 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		FF6B23552D3531ED0054D2B7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FF6B23572D354A440054D2B7 /* WeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				FF6B23252D3508F30054D2B7 /* ContentView.swift */,
+				FF6B23552D3531ED0054D2B7 /* HomeView.swift */,
+				FF6B23572D354A440054D2B7 /* WeatherItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +304,8 @@
 				FF6B23542D351E240054D2B7 /* NavigationViewModel.swift in Sources */,
 				FF6B23262D3508F30054D2B7 /* ContentView.swift in Sources */,
 				FF6B23282D3508F30054D2B7 /* Item.swift in Sources */,
+				FF6B23562D3531ED0054D2B7 /* HomeView.swift in Sources */,
+				FF6B23582D354A440054D2B7 /* WeatherItemView.swift in Sources */,
 				FF6B23242D3508F30054D2B7 /* WeatherAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
