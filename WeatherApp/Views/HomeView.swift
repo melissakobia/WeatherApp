@@ -30,16 +30,17 @@ struct HomeView: View {
                         .foregroundStyle(Color.white)
                         .kerning(3)
                 }
-                .padding(.bottom)
+                .padding(.top, -20)
             }
             .frame(height: 450)
             
             forecastView
+                .padding(.top, -50)
             
             Spacer()
         
         }
-        .ignoresSafeArea(.container, edges: .vertical)
+        .ignoresSafeArea(edges: .top)
     }
     
     var forecastView: some View {
@@ -86,26 +87,25 @@ struct HomeView: View {
                     }
                    
                 }
+                .padding(.horizontal)
                 
                 Rectangle()
                     .fill(Color.white)
                     .frame(maxWidth: .infinity)
                     .frame(height: 1)
                 
-                Spacer()
                 
                 VStack(alignment: .leading, spacing: 15) {
                     ForEach(0...5, id: \.self) { item in
                         WeatherItemView()
                     }
                 }
+                .padding(.horizontal)
                 
-                Spacer()
+                
             }
-            .padding()
+            
         }
-        
-        
     }
 }
 
