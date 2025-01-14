@@ -10,7 +10,6 @@ import Foundation
 // MARK: - List
 struct List: Codable, Identifiable {
     var id = UUID().uuidString
-    
     var dt: Int?
     var main: Main?
     var weather: [Weather]?
@@ -25,5 +24,10 @@ struct List: Codable, Identifiable {
     enum CodingKeys: String, CodingKey {
         case dt, main, weather, clouds, wind, visibility, pop, rain, sys
         case dtTxt = "dt_txt"
+    }
+    
+    func dayName() -> String? {
+        let day = DateUtil.convertedDate(dtTxt ?? "", "EEEE", "yyyy-MM-dd HH:mm:ss")
+        return day
     }
 }
