@@ -8,7 +8,9 @@
 import Foundation
 
 // MARK: - List
-struct List: Codable {
+struct List: Codable, Identifiable {
+    var id = UUID().uuidString
+    
     var dt: Int?
     var main: Main?
     var weather: [Weather]?

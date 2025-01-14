@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WeatherItemView: View {
+    @State var listItem: List
     
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
@@ -32,5 +33,5 @@ struct WeatherItemView: View {
 }
 
 #Preview {
-    WeatherItemView()
+    WeatherItemView(listItem: List())
 }

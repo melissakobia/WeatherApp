@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var weatherViewModel: WeatherViewModel = WeatherViewModel()
     
+    
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
@@ -26,7 +27,7 @@ struct HomeView: View {
                         .foregroundStyle(Color.white)
                     
                     
-                    Text(weatherViewModel.weather?.weather.first?.main ?? "SUNNY")
+                    Text(weatherViewModel.weather?.weather.first?.main.uppercased() ?? "SUNNY")
                         .font(.title)
                         .foregroundStyle(Color.white)
                         .kerning(3)
@@ -46,11 +47,11 @@ struct HomeView: View {
             
         }
         .ignoresSafeArea(edges: .top)
-        .onAppear {
-            Task {
-                await weatherViewModel.fetchCurrentWeather(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
-            }
+        .task {
+            await weatherViewModel.fetchCurrentWeather(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
+            await weatherViewModel.fetchWeatherForecast(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
         }
+        
         
     }
     
@@ -107,7 +108,7 @@ struct HomeView: View {
                 
                 
                 VStack(alignment: .leading, spacing: 15) {
-                    ForEach(0...5, id: \.self) { item in
+                    ForEach(weatherViewModel.forecast) { item in
                         WeatherItemView()
                     }
                 }
