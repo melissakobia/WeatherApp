@@ -10,8 +10,9 @@ import Foundation
 
 // MARK: - Main
 struct Main: Codable {
-    var temp, feelsLike, tempMin, tempMax: Double
-    var pressure, humidity, seaLevel, grndLevel: Int
+    var temp, feelsLike, tempMin, tempMax: Double?
+    var pressure, humidity, seaLevel, grndLevel: Int?
+    var tempKf: Double?
 
     enum CodingKeys: String, CodingKey {
         case temp
@@ -21,5 +22,9 @@ struct Main: Codable {
         case pressure, humidity
         case seaLevel = "sea_level"
         case grndLevel = "grnd_level"
+        case tempKf = "temp_kf"
     }
 }
+
+
+    

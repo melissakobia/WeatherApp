@@ -14,7 +14,7 @@ class WeatherViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     
     
-    func fetchCurrentWeather(lat: Double, lon: Double, appId: String, units: String) async {
+    func fetchCurrentWeather1(lat: Double, lon: Double, appId: String, units: String) async {
         debugPrint("This method is called")
         let resource = WeatherResource(lat: lat, lon: lon, appId: appId, units: units)
         debugPrint("The url is:- \(resource.url.absoluteString)")
@@ -23,7 +23,7 @@ class WeatherViewModel: ObservableObject {
         self.weather = weather
     }
     
-    func fetchCurrentWeather1(lat: Double, lon: Double, appId: String, units: String) async {
+    func fetchCurrentWeather(lat: Double, lon: Double, appId: String, units: String) async {
         debugPrint("This method is called")
         let resource = WeatherResource(lat: lat, lon: lon, appId: appId, units: units)
         debugPrint("The url is:- \(resource.url.absoluteString)")

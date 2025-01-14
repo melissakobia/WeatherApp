@@ -9,7 +9,8 @@ import Foundation
 
 // MARK: - Wind
 struct Wind: Codable {
-    var speed: Double
-    var deg: Int
-    var gust: Double
+    var speed: Double?
+    var deg: Int?
+    var gust: Double?
+    
 }

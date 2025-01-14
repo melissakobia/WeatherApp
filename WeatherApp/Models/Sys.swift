@@ -12,4 +12,5 @@ struct Sys: Codable {
     var type, id: Int?
     var country: String?
     var sunrise, sunset: Int?
+    var pod: String?
 }

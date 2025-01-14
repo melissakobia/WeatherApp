@@ -8,12 +8,12 @@
 import Foundation
 
 class WeatherService {
-    func fetchCurrentWeatherData(fromURL: URL) async -> Weather? {
+    func fetchCurrentWeatherData<T: Codable>(fromURL: URL) async -> T? {
         do {
             let (data, response) = try await URLSession.shared.data(from: fromURL)
             guard let response = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
             guard response.statusCode >= 200 && response.statusCode < 300 else { throw NetworkError.invalidStatusCode }
-            guard let decodedResponse = try? JSONDecoder().decode(Weather.self, from: data) else { throw NetworkError.failedToDecodeResponse }
+            guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else { throw NetworkError.failedToDecodeResponse }
             
             return decodedResponse
         } catch NetworkError.invalidUrl {
