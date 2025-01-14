@@ -31,6 +31,7 @@
 		FF6B236F2D36525F0054D2B7 /* WeatherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B236E2D36525F0054D2B7 /* WeatherResource.swift */; };
 		FF6B23712D3655460054D2B7 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23702D3655460054D2B7 /* NetworkRequest.swift */; };
 		FF6B23732D3656870054D2B7 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23722D3656870054D2B7 /* APIRequest.swift */; };
+		FF6B23752D3688E20054D2B7 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23742D3688E20054D2B7 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		FF6B236E2D36525F0054D2B7 /* WeatherResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResource.swift; sourceTree = "<group>"; };
 		FF6B23702D3655460054D2B7 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		FF6B23722D3656870054D2B7 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		FF6B23742D3688E20054D2B7 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FF6B23532D351E240054D2B7 /* NavigationViewModel.swift */,
+				FF6B23742D3688E20054D2B7 /* WeatherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				FF6B235C2D35B1940054D2B7 /* Clouds.swift in Sources */,
 				FF6B23262D3508F30054D2B7 /* ContentView.swift in Sources */,
 				FF6B235E2D35B1C10054D2B7 /* Coord.swift in Sources */,
+				FF6B23752D3688E20054D2B7 /* WeatherViewModel.swift in Sources */,
 				FF6B23282D3508F30054D2B7 /* Item.swift in Sources */,
 				FF6B23732D3656870054D2B7 /* APIRequest.swift in Sources */,
 				FF6B23622D35B2280054D2B7 /* Rain.swift in Sources */,

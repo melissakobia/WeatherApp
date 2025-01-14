@@ -15,14 +15,17 @@ protocol APIResource {
     var lat: Double { get }
     var lon: Double { get }
     var appId: String { get }
+    var units: String { get }
+    
 }
 
 extension APIResource {
     var url: URL {
-        var queryItems = [
+        let queryItems = [
             URLQueryItem(name: "lat", value: String(lat)),
             URLQueryItem(name: "lon", value: String(lon)),
-            URLQueryItem(name: "appid", value: appId)
+            URLQueryItem(name: "appid", value: appId),
+            URLQueryItem(name: "units", value: units)
         ]
         
         let url = URL(string: "https://api.openweathermap.org/data/2.5")!

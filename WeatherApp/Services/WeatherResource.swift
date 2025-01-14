@@ -18,10 +18,13 @@ struct WeatherResource: APIResource {
     
     var appId: String
     
-    init(lat: Double, lon: Double, appId: String) {
+    var units: String
+    
+    init(lat: Double, lon: Double, appId: String, units: String) {
         self.lat = lat
         self.lon = lon
         self.appId = appId
+        self.units = units
     }
     
     
