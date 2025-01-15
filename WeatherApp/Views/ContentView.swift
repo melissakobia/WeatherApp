@@ -11,23 +11,15 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @StateObject var weatherViewModel: WeatherViewModel = WeatherViewModel()
+    @StateObject var locationManager: LocationManager = LocationManager()
     @Query private var items: [Item]
     
     var body: some View {
-        TabView {
-            HomeView()
-                .environmentObject(weatherViewModel)
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-            
-            SavedLocationsView()
-                .tabItem {
-                    Label("List", systemImage: "list.dash")
-                }
-        }
-        .ignoresSafeArea(.all)
-        .tint(weatherViewModel.weather?.weather?.first?.type().colors ?? Color.colorSunny)
+        HomeView()
+            .environmentObject(weatherViewModel)
+            .environmentObject(locationManager)
+            .ignoresSafeArea(.all)
+        
         
     }
     

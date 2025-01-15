@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var weatherViewModel: WeatherViewModel
+    @EnvironmentObject var locationManager: LocationManager
     
     
     var body: some View {
@@ -27,7 +28,7 @@ struct HomeView: View {
                         .foregroundStyle(Color.white)
                     
                     
-                    Text(weatherViewModel.weather?.weather?.first?.main?.uppercased() ?? "SUNNY")
+                    Text(weatherViewModel.weather?.weather?.first?.main?.uppercased() ?? "-----")
                         .font(.title)
                         .foregroundStyle(Color.white)
                         .kerning(3)
@@ -41,17 +42,23 @@ struct HomeView: View {
           
         }
         .ignoresSafeArea()
-        .task {
-            await weatherViewModel.fetchCurrentWeather(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
-            await weatherViewModel.fetchWeatherForecast(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
-        }
+        .onReceive(locationManager.$location, perform: { value in
+            guard let lat = value?.latitude, let lon = value?.latitude else { return }
+            
+            Task {
+                await weatherViewModel.fetchCurrentWeather(lat: lat, lon: lon, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
+                await weatherViewModel.fetchWeatherForecast(lat: lat, lon: lon, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
+            }
+            
+        })
+       
         
         
     }
     
     var forecastView: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack(alignment: .leading, spacing: 20) {
                 HStack(alignment: .center, spacing: 10) {
                     VStack(spacing: 5) {
                         Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.tempMin ?? 0))º")

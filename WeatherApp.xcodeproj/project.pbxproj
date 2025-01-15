@@ -39,6 +39,7 @@
 		FF6B237F2D36D6D90054D2B7 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B237E2D36D6D90054D2B7 /* DateUtil.swift */; };
 		FF6B23812D3753F40054D2B7 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23802D3753F40054D2B7 /* WeatherType.swift */; };
 		FF6B23832D3762550054D2B7 /* SavedLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23822D3762550054D2B7 /* SavedLocationsView.swift */; };
+		FF6B23862D37AA130054D2B7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23852D37AA130054D2B7 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		FF6B237E2D36D6D90054D2B7 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		FF6B23802D3753F40054D2B7 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 		FF6B23822D3762550054D2B7 /* SavedLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationsView.swift; sourceTree = "<group>"; };
+		FF6B23842D37A9800054D2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FF6B23852D37AA130054D2B7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,7 @@
 		FF6B23222D3508F30054D2B7 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				FF6B23842D37A9800054D2B7 /* Info.plist */,
 				FF6B23692D35B3750054D2B7 /* Services */,
 				FF6B23522D3518720054D2B7 /* Views */,
 				FF6B23512D3518660054D2B7 /* ViewModels */,
@@ -214,6 +218,7 @@
 			children = (
 				FF6B23532D351E240054D2B7 /* NavigationViewModel.swift */,
 				FF6B23742D3688E20054D2B7 /* WeatherViewModel.swift */,
+				FF6B23852D37AA130054D2B7 /* LocationManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				FF6B235A2D35B1170054D2B7 /* Weather.swift in Sources */,
 				FF6B23792D36CA720054D2B7 /* List.swift in Sources */,
 				FF6B236D2D36507C0054D2B7 /* APIResource.swift in Sources */,
+				FF6B23862D37AA130054D2B7 /* LocationManager.swift in Sources */,
 				FF6B23642D35B2420054D2B7 /* Sys.swift in Sources */,
 				FF6B23712D3655460054D2B7 /* NetworkRequest.swift in Sources */,
 				FF6B236F2D36525F0054D2B7 /* WeatherResource.swift in Sources */,
@@ -565,6 +571,12 @@
 				DEVELOPMENT_TEAM = N667Q3BDJ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Weather app requires you location to be able fetch the current weather in your location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Weather app requires you location to be able fetch the current weather in your location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Weather app requires you location to be able fetch the current weather in your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Weather app requires you location to be able fetch the current weather in your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -594,6 +606,12 @@
 				DEVELOPMENT_TEAM = N667Q3BDJ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Weather app requires you location to be able fetch the current weather in your location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Weather app requires you location to be able fetch the current weather in your location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Weather app requires you location to be able fetch the current weather in your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Weather app requires you location to be able fetch the current weather in your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
