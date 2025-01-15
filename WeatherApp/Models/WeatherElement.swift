@@ -9,6 +9,6 @@ import Foundation
 
 // MARK: - WeatherElement
 struct WeatherElement: Codable {
-    var id: Int
-    var main, description, icon: String
+    var id: Int?
+    var main, description, icon: String?
 }

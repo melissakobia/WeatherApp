@@ -11,5 +11,5 @@ import Foundation
 
 // MARK: - Coord
 struct Coord: Codable {
-    var lon, lat: Double
+    var lon, lat: Double?
 }

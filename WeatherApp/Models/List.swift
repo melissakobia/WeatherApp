@@ -12,7 +12,7 @@ struct List: Codable, Identifiable {
     var id = UUID().uuidString
     var dt: Int?
     var main: Main?
-    var weather: [Weather]?
+    var weather: [WeatherElement]?
     var clouds: Clouds?
     var wind: Wind?
     var visibility: Int?
@@ -31,3 +31,5 @@ struct List: Codable, Identifiable {
         return day
     }
 }
+
+

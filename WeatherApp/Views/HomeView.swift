@@ -21,30 +21,25 @@ struct HomeView: View {
                     .frame(height: 450)
                 
                 VStack(spacing: 10) {
-                    Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.temp ?? 0))º")
+                    Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.feelsLike ?? 0))º")
                         .font(.system(size: 40))
                         .fontWeight(.bold)
                         .foregroundStyle(Color.white)
                     
                     
-                    Text(weatherViewModel.weather?.weather.first?.main.uppercased() ?? "SUNNY")
+                    Text(weatherViewModel.weather?.weather?.first?.main?.uppercased() ?? "SUNNY")
                         .font(.title)
                         .foregroundStyle(Color.white)
                         .kerning(3)
                 }
-                .padding(.top, -20)
+                .padding(.top, -40)
             }
             .frame(height: 450)
             
             forecastView
                 .padding(.top, -50)
             
-            Text(weatherViewModel.errorMessage)
-                .font(.footnote)
-                .foregroundStyle(Color.white)
-            
-            Spacer()
-            
+          
         }
         .ignoresSafeArea(edges: .top)
         .task {
@@ -56,9 +51,7 @@ struct HomeView: View {
     }
     
     var forecastView: some View {
-        ZStack {
-            Color.colorSunny
-            
+        ScrollView {
             VStack(spacing: 20) {
                 HStack(alignment: .center, spacing: 0) {
                     VStack(spacing: 5) {
@@ -109,15 +102,22 @@ struct HomeView: View {
                 
                 VStack(alignment: .leading, spacing: 15) {
                     ForEach(weatherViewModel.forecast) { item in
-                        WeatherItemView()
+                        WeatherItemView(listItem: item)
                     }
                 }
                 .padding(.horizontal)
                 
                 
             }
-            
         }
+        .background {
+            ZStack {
+                Color.colorSunny
+            }
+        }
+        .scrollIndicators(.hidden)
+        
+        
     }
 }
 

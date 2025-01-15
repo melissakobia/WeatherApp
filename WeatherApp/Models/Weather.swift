@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Weather
 struct Weather: Codable, Identifiable {
     var coord: Coord?
-    var weather: [WeatherElement]
+    var weather: [WeatherElement]?
     var base: String?
     var main: Main?
     var visibility: Int?

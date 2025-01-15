@@ -9,5 +9,5 @@ import Foundation
 
 // MARK: - Clouds
 struct Clouds: Codable {
-    var all: Int
+    var all: Int?
 }

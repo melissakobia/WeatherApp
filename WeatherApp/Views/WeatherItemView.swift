@@ -12,7 +12,7 @@ struct WeatherItemView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
-            Text("Sunday")
+            Text(listItem.dayName() ?? "")
                 .font(.subheadline)
                 .foregroundStyle(Color.white)
             Spacer()
@@ -24,7 +24,7 @@ struct WeatherItemView: View {
             
             Spacer()
             
-            Text("19º")
+            Text("\(String(format: "%.2f", listItem.main?.temp ?? 0))º")
                 .font(.subheadline)
                 .fontWeight(.medium)
                 .foregroundStyle(Color.white)
