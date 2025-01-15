@@ -11,4 +11,10 @@ import Foundation
 struct WeatherElement: Codable {
     var id: Int?
     var main, description, icon: String?
+    
+    func type() -> WeatherType {
+        guard let weather = WeatherType(rawValue: main ?? "") else { return .sunny}
+        
+        return weather
+    }
 }

@@ -14,14 +14,14 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
-                Image("forest_sunny")
+                Image(weatherViewModel.weather?.weather?.first?.type().image ?? "forest_sunny")
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: .infinity)
                     .frame(height: 450)
                 
                 VStack(spacing: 10) {
-                    Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.feelsLike ?? 0))º")
+                    Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.temp ?? 0))º")
                         .font(.system(size: 40))
                         .fontWeight(.bold)
                         .foregroundStyle(Color.white)
@@ -32,16 +32,16 @@ struct HomeView: View {
                         .foregroundStyle(Color.white)
                         .kerning(3)
                 }
-                .padding(.top, -40)
+                .padding(.bottom, 35)
             }
             .frame(height: 450)
             
             forecastView
-                .padding(.top, -50)
+                .padding(.top, -60)
             
           
         }
-        .ignoresSafeArea(edges: .top)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task {
             await weatherViewModel.fetchCurrentWeather(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
             await weatherViewModel.fetchWeatherForecast(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
@@ -56,7 +56,7 @@ struct HomeView: View {
                 HStack(alignment: .center, spacing: 0) {
                     VStack(spacing: 5) {
                         Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.tempMin ?? 0))º")
-                            .font(.subheadline)
+                            .font(.body)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.white)
                         
@@ -69,7 +69,7 @@ struct HomeView: View {
                     
                     VStack(spacing: 5) {
                         Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.temp ?? 0))º")
-                            .font(.subheadline)
+                            .font(.body)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.white)
                         
@@ -82,7 +82,7 @@ struct HomeView: View {
                     
                     VStack(spacing: 5) {
                         Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.tempMax ?? 0))º")
-                            .font(.subheadline)
+                            .font(.body)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.white)
                         
@@ -109,10 +109,11 @@ struct HomeView: View {
                 
                 
             }
+            .padding(.vertical, 10)
         }
         .background {
             ZStack {
-                Color.colorSunny
+                weatherViewModel.weather?.weather?.first?.type().colors ?? Color.colorSunny
             }
         }
         .scrollIndicators(.hidden)
@@ -124,3 +125,5 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
+
+

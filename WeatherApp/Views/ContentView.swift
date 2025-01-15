@@ -13,7 +13,9 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
+        
         HomeView()
+            .ignoresSafeArea(.all)
     }
 
     private func addItem() {

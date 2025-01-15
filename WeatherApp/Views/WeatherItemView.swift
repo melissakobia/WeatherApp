@@ -17,7 +17,7 @@ struct WeatherItemView: View {
                 .foregroundStyle(Color.white)
             Spacer()
             
-            Image("clear")
+            Image(listItem.weather?.first?.type().icon ?? "clear")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 25, height: 25)
