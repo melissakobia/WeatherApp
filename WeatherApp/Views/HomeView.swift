@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var weatherViewModel: WeatherViewModel = WeatherViewModel()
+    @EnvironmentObject var weatherViewModel: WeatherViewModel
     
     
     var body: some View {
@@ -16,9 +16,9 @@ struct HomeView: View {
             ZStack {
                 Image(weatherViewModel.weather?.weather?.first?.type().image ?? "forest_sunny")
                     .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 450)
+                    .scaledToFill()
+                    .frame(height: 400)
+                    .ignoresSafeArea(edges: .top)
                 
                 VStack(spacing: 10) {
                     Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.temp ?? 0))º")
@@ -34,14 +34,13 @@ struct HomeView: View {
                 }
                 .padding(.bottom, 35)
             }
-            .frame(height: 450)
             
             forecastView
                 .padding(.top, -60)
             
           
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea()
         .task {
             await weatherViewModel.fetchCurrentWeather(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
             await weatherViewModel.fetchWeatherForecast(lat: 1.2921, lon: 36.8219, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
@@ -53,7 +52,7 @@ struct HomeView: View {
     var forecastView: some View {
         ScrollView {
             VStack(spacing: 20) {
-                HStack(alignment: .center, spacing: 0) {
+                HStack(alignment: .center, spacing: 10) {
                     VStack(spacing: 5) {
                         Text("\(String(format: "%.2f", weatherViewModel.weather?.main?.tempMin ?? 0))º")
                             .font(.body)

@@ -38,6 +38,7 @@
 		FF6B237D2D36CFA20054D2B7 /* WeatherForecastResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B237C2D36CFA20054D2B7 /* WeatherForecastResource.swift */; };
 		FF6B237F2D36D6D90054D2B7 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B237E2D36D6D90054D2B7 /* DateUtil.swift */; };
 		FF6B23812D3753F40054D2B7 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23802D3753F40054D2B7 /* WeatherType.swift */; };
+		FF6B23832D3762550054D2B7 /* SavedLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23822D3762550054D2B7 /* SavedLocationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		FF6B237C2D36CFA20054D2B7 /* WeatherForecastResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastResource.swift; sourceTree = "<group>"; };
 		FF6B237E2D36D6D90054D2B7 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		FF6B23802D3753F40054D2B7 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
+		FF6B23822D3762550054D2B7 /* SavedLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				FF6B23252D3508F30054D2B7 /* ContentView.swift */,
 				FF6B23552D3531ED0054D2B7 /* HomeView.swift */,
 				FF6B23572D354A440054D2B7 /* WeatherItemView.swift */,
+				FF6B23822D3762550054D2B7 /* SavedLocationsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				FF6B23282D3508F30054D2B7 /* Item.swift in Sources */,
 				FF6B23732D3656870054D2B7 /* APIRequest.swift in Sources */,
 				FF6B23812D3753F40054D2B7 /* WeatherType.swift in Sources */,
+				FF6B23832D3762550054D2B7 /* SavedLocationsView.swift in Sources */,
 				FF6B23622D35B2280054D2B7 /* Rain.swift in Sources */,
 				FF6B23662D35B29D0054D2B7 /* WeatherElement.swift in Sources */,
 				FF6B23562D3531ED0054D2B7 /* HomeView.swift in Sources */,

@@ -10,21 +10,34 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @StateObject var weatherViewModel: WeatherViewModel = WeatherViewModel()
     @Query private var items: [Item]
-
+    
     var body: some View {
+        TabView {
+            HomeView()
+                .environmentObject(weatherViewModel)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
+            SavedLocationsView()
+                .tabItem {
+                    Label("List", systemImage: "list.dash")
+                }
+        }
+        .ignoresSafeArea(.all)
+        .tint(weatherViewModel.weather?.weather?.first?.type().colors ?? Color.colorSunny)
         
-        HomeView()
-            .ignoresSafeArea(.all)
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(timestamp: Date())
             modelContext.insert(newItem)
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {

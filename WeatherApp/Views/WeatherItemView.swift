@@ -15,14 +15,15 @@ struct WeatherItemView: View {
             Text(listItem.dayName() ?? "")
                 .font(.subheadline)
                 .foregroundStyle(Color.white)
-            Spacer()
+            
+            Spacer(minLength: 10)
             
             Image(listItem.weather?.first?.type().icon ?? "clear")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 25, height: 25)
             
-            Spacer()
+            Spacer(minLength: 10)
             
             Text("\(String(format: "%.2f", listItem.main?.temp ?? 0))º")
                 .font(.subheadline)
