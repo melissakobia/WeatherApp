@@ -46,14 +46,12 @@ struct HomeView: View {
             guard let lat = value?.latitude, let lon = value?.latitude else { return }
             
             Task {
-                await weatherViewModel.fetchCurrentWeather(lat: lat, lon: lon, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
-                await weatherViewModel.fetchWeatherForecast(lat: lat, lon: lon, appId: "609f6d8b08711e832280eca8fbdb41b2", units: "metric")
+                await weatherViewModel.fetchCurrentWeather(lat: lat, lon: lon, appId: Constants.appId, units: Constants.units)
+                await weatherViewModel.fetchWeatherForecast(lat: lat, lon: lon, appId: Constants.appId, units: Constants.units)
             }
             
         })
        
-        
-        
     }
     
     var forecastView: some View {

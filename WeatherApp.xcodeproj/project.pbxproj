@@ -40,6 +40,7 @@
 		FF6B23812D3753F40054D2B7 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23802D3753F40054D2B7 /* WeatherType.swift */; };
 		FF6B23832D3762550054D2B7 /* SavedLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23822D3762550054D2B7 /* SavedLocationsView.swift */; };
 		FF6B23862D37AA130054D2B7 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23852D37AA130054D2B7 /* LocationManager.swift */; };
+		FF6B23882D37D8C60054D2B7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B23872D37D8C60054D2B7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		FF6B23822D3762550054D2B7 /* SavedLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationsView.swift; sourceTree = "<group>"; };
 		FF6B23842D37A9800054D2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FF6B23852D37AA130054D2B7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FF6B23872D37D8C60054D2B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				FF6B23292D3508F60054D2B7 /* Assets.xcassets */,
 				FF6B237E2D36D6D90054D2B7 /* DateUtil.swift */,
+				FF6B23872D37D8C60054D2B7 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				FF6B235C2D35B1940054D2B7 /* Clouds.swift in Sources */,
 				FF6B23262D3508F30054D2B7 /* ContentView.swift in Sources */,
 				FF6B237B2D36CBA00054D2B7 /* City.swift in Sources */,
+				FF6B23882D37D8C60054D2B7 /* Constants.swift in Sources */,
 				FF6B235E2D35B1C10054D2B7 /* Coord.swift in Sources */,
 				FF6B237F2D36D6D90054D2B7 /* DateUtil.swift in Sources */,
 				FF6B23752D3688E20054D2B7 /* WeatherViewModel.swift in Sources */,
