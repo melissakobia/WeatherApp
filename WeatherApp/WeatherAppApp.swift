@@ -7,9 +7,13 @@
 
 import SwiftUI
 import SwiftData
+import GooglePlaces
+
 
 @main
 struct WeatherAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -28,5 +32,12 @@ struct WeatherAppApp: App {
             ContentView()
         }
 //        .modelContainer(sharedModelContainer)
+    }
+}
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        GMSPlacesClient.provideAPIKey("AIzaSyArPK43avwFweLgkdlch0tUkn9zgGqxZEQ")
     }
 }
